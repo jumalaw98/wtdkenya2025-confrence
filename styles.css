@@ -1399,3 +1399,24 @@ a:hover {
         border: 1px solid hsl(var(--border));
     }
 }
+
+
+/* three session same time */
+
+.parallel-sessions {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 900px) {
+  .parallel-sessions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.session-card {
+  flex: 1 1 0;
+  min-width: 280px;
+  max-width: 100%;
+}
