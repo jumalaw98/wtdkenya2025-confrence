@@ -187,6 +187,10 @@
                                     <i class="fas fa-user-check" aria-hidden="true"></i>
                                     <span>Lucy Wanjiku</span>
                                 </div>
+                                <div class="session-location">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    <span>Workshop Room A</span>
+                                </div>
                                 <button class="btn btn-small" onclick="addToCalendar('Building Better API Documentation', '2025-03-15T10:00:00', '2025-03-15T11:30:00')">
                                     <i class="fas fa-calendar-plus" aria-hidden="true"></i>
                                     Add to Calendar
@@ -214,6 +218,10 @@
                                 <div class="session-volunteer">
                                     <i class="fas fa-user-check" aria-hidden="true"></i>
                                     <span>David Otieno</span>
+                                </div>
+                                <div class="session-location">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    <span>Workshop Room B</span>
                                 </div>
                                 <button class="btn btn-small" onclick="addToCalendar('Documentation Localization & Accessibility', '2025-03-15T10:00:00', '2025-03-15T11:30:00')">
                                     <i class="fas fa-calendar-plus" aria-hidden="true"></i>
@@ -249,14 +257,9 @@
                     </div>
                 </div>
 
-                <!-- Day 2 Header -->
-                <div class="day-header">
-                    <h3>Day 2 - March 16, 2025</h3>
-                </div>
-
                 <!-- Panel Discussion -->
-                <div class="session-card keynote" data-type="keynote" data-time="09:00" data-speaker="Panel Discussion" data-topic="community building open source">
-                    <div class="session-time">09:00 - 10:00</div>
+                <div class="session-card keynote" data-type="keynote" data-time="12:30" data-speaker="Panel Discussion" data-topic="community building open source">
+                    <div class="session-time">12:30 - 13:30</div>
                     <div class="session-content">
                         <h4 class="session-title">Building Documentation Communities in Open Source</h4>
                         <p class="session-description">Panel discussion with maintainers and contributors on fostering inclusive documentation communities in open source projects.</p>
@@ -270,7 +273,11 @@
                                 <i class="fas fa-user-check" aria-hidden="true"></i>
                                 <span>Grace Nyong'o</span>
                             </div>
-                            <button class="btn btn-small" onclick="addToCalendar('Building Documentation Communities in Open Source', '2025-03-16T09:00:00', '2025-03-16T10:00:00')">
+                            <div class="session-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Main Auditorium</span>
+                            </div>
+                            <button class="btn btn-small" onclick="addToCalendar('Building Documentation Communities in Open Source', '2025-03-15T12:30:00', '2025-03-15T13:30:00')">
                                 <i class="fas fa-calendar-plus" aria-hidden="true"></i>
                                 Add to Calendar
                             </button>
@@ -281,9 +288,64 @@
                     </button>
                 </div>
 
+                <!-- Lunch Break -->
+                <div class="session-card break" data-type="networking" data-time="13:30" data-speaker="" data-topic="networking lunch">
+                    <div class="session-time">13:30 - 14:30</div>
+                    <div class="session-content">
+                        <h4 class="session-title">Lunch & Photo Session</h4>
+                        <p class="session-description">Enjoy lunch while networking with fellow attendees. Perfect time for group photos and continuing conversations from the morning sessions.</p>
+                        <div class="break-image">
+                            <img src="https://pixabay.com/get/g35b68b60814e260ed3c726a1312c758cc644012aad27e2ecfddfa13a3293b7f34a490837972fec76a800064dd50ff2e0d6729ca54164d539c944d0fc083f56a1_1280.jpg" alt="Lunch networking session" class="networking-image">
+                        </div>
+                        <div class="session-meta">
+                            <div class="session-volunteer">
+                                <i class="fas fa-user-check" aria-hidden="true"></i>
+                                <span>Events Team</span>
+                            </div>
+                            <div class="session-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Dining Hall</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Afternoon Session -->
+                <div class="session-card workshop" data-type="workshop" data-time="14:30" data-speaker="Peter Mukuria" data-topic="content strategy tools">
+                    <div class="session-time">14:30 - 15:30</div>
+                    <div class="session-content">
+                        <h4 class="session-title">Content Strategy & Modern Documentation Tools</h4>
+                        <p class="session-description">Explore modern tools and strategies for creating, maintaining, and scaling documentation in fast-paced development environments.</p>
+                        <div class="session-speaker">
+                            <img src="https://pixabay.com/get/gd74839d51f6a8dccf37f2a2d4df99851d29387095d371b6b5266c0bb232ba42fe04d1075fcfab5e6e3e9ba6b95fe2a74968c989e96789595a342c6e10e474eb1_1280.jpg" alt="Peter Mukuria" class="speaker-image">
+                            <div class="speaker-info">
+                                <span class="speaker-name">Peter Mukuria</span>
+                                <span class="speaker-title">Lead Developer Relations, TechKenya</span>
+                            </div>
+                        </div>
+                        <div class="session-meta">
+                            <div class="session-volunteer">
+                                <i class="fas fa-user-check" aria-hidden="true"></i>
+                                <span>Sarah Kimani</span>
+                            </div>
+                            <div class="session-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Main Auditorium</span>
+                            </div>
+                            <button class="btn btn-small" onclick="addToCalendar('Content Strategy & Modern Documentation Tools', '2025-03-15T14:30:00', '2025-03-15T15:30:00')">
+                                <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+                    <button class="session-details-btn" onclick="openSessionModal('workshop3')" aria-label="View session details">
+                        <i class="fas fa-info-circle" aria-hidden="true"></i>
+                    </button>
+                </div>
+
                 <!-- Closing Session -->
-                <div class="session-card keynote" data-type="keynote" data-time="16:00" data-speaker="Community" data-topic="closing community">
-                    <div class="session-time">16:00 - 17:00</div>
+                <div class="session-card keynote" data-type="keynote" data-time="15:45" data-speaker="Community" data-topic="closing community">
+                    <div class="session-time">15:45 - 16:30</div>
                     <div class="session-content">
                         <h4 class="session-title">Closing Ceremony & Community Commitment</h4>
                         <p class="session-description">Wrap up the conference with reflections, community commitments, and plans for continuing the conversations started here.</p>
@@ -292,7 +354,11 @@
                                 <i class="fas fa-user-check" aria-hidden="true"></i>
                                 <span>Organizing Committee</span>
                             </div>
-                            <button class="btn btn-small" onclick="addToCalendar('Closing Ceremony & Community Commitment', '2025-03-16T16:00:00', '2025-03-16T17:00:00')">
+                            <div class="session-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Main Auditorium</span>
+                            </div>
+                            <button class="btn btn-small" onclick="addToCalendar('Closing Ceremony & Community Commitment', '2025-03-15T15:45:00', '2025-03-15T16:30:00')">
                                 <i class="fas fa-calendar-plus" aria-hidden="true"></i>
                                 Add to Calendar
                             </button>
