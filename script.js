@@ -340,37 +340,38 @@ function closeSessionModal() {
 function getSessionInfo(sessionId) {
     const sessions = {
         'keynote1': {
-            title: 'The Future of Documentation in Africa',
-            speaker: 'Dr. Sarah Johnson',
+            title: 'Welcome Remarks & Opening Keynote',
+            speaker: 'Hillary Nyakundi',
             content: `
                 <div class="modal-session-content">
                     <div class="modal-speaker">
-                        <img src="https://pixabay.com/get/gd74839d51f6a8dccf37f2a2d4df99851d29387095d371b6b5266c0bb232ba42fe04d1075fcfab5e6e3e9ba6b95fe2a74968c989e96789595a342c6e10e474eb1_1280.jpg" alt="Dr. Sarah Johnson" class="modal-speaker-image">
+                        <img src="https://cdn.bio.link/uploads/profile_pictures/2023-01-27/8QiR4BdMLJcRwuLDn99GALfjDpWX6nAU.png" alt="Hillary Nyakundi" class="modal-speaker-image">
                         <div class="modal-speaker-info">
-                            <h3>Dr. Sarah Johnson</h3>
-                            <p>Director of Technical Communication, TechAfrica</p>
+                            <h3>Hillary Nyakundi/h3>
+                            <p>Curriculum Developer, freeCodeCamp</p>
                         </div>
                     </div>
                     <div class="modal-session-details">
-                        <p><strong>Time:</strong> March 15, 2025 - 09:00 - 09:45</p>
+                        <p><strong>Time:</strong> June 07, 2025 - 08:35 - 08:45</p>
                         <p><strong>Location:</strong> Main Auditorium</p>
                         <p><strong>Session Type:</strong> Keynote Presentation</p>
                     </div>
                     <div class="modal-description">
                         <h4>About this session</h4>
-                        <p>Join Dr. Sarah Johnson as she explores the evolving landscape of documentation practices across African tech communities. This keynote will highlight unique opportunities for innovation, discuss challenges specific to our region, and showcase successful documentation initiatives that have emerged from African organizations.</p>
+                        <p>Kick-Off the Write the Docs Kenya 2025 Conference with an inspiring opening session featuring welcome remarks from the organizing team and our keynote speaker. This session will set the tone for the day, highlighting the importance of documentation in tech, celebrating the growth of the local documentation community, and offering insights into the evolving role of technical writers in Africa and beyond. Join us as we open the conference with energy, vision, and a shared passion for clear, impactful documentation.</p>
                         <p>Key topics include:</p>
                         <ul>
-                            <li>Current state of technical documentation in Africa</li>
-                            <li>Opportunities for localization and cultural adaptation</li>
-                            <li>Community-driven documentation initiatives</li>
-                            <li>Technology solutions emerging from African teams</li>
-                            <li>Building sustainable documentation practices</li>
+                            <li>The future of technical writing in Africa</li>
+                            <li>Documentation as a driver of open-source growth</li>
+                            <li>AI’s impact on technical communication</li>
+                            <li>Building inclusive and collaborative doc communities</li>
+                            <li>Empowering the next generation of documentarians</li>
                         </ul>
                     </div>
                     <div class="modal-speaker-bio">
                         <h4>About the speaker</h4>
-                        <p>Dr. Sarah Johnson is a leading voice in technical communication across Africa. With over 15 years of experience in documentation strategy, she has worked with organizations across the continent to build robust documentation cultures. She holds a PhD in Information Science and is passionate about making technical knowledge accessible to diverse audiences.</p>
+                        <p>Hillary is a results-driven advocate committed to transforming complex technical concepts into accessible, actionable knowledge. Skilled in technical writing, curriculum development, and collaborative software projects, I bring a versatile background in both software and education to every role.
+</p>
                     </div>
                 </div>
             `
