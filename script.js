@@ -229,9 +229,16 @@ function slideCarousel(direction) {
 
 function updateCarousel() {
     const carousel = document.getElementById('organizersCarousel');
-    const slideWidth = 100;
-    const translateX = -currentSlide * slideWidth;
+    const slides = carousel.querySelectorAll('.organizer-slide');
+    const slideWidth = 50; // Show 2 cards at a time
+    const maxSlide = Math.max(0, slides.length - 2);
     
+    // Ensure currentSlide doesn't exceed bounds
+    if (currentSlide > maxSlide) {
+        currentSlide = 0;
+    }
+    
+    const translateX = -currentSlide * slideWidth;
     carousel.style.transform = `translateX(${translateX}%)`;
 }
 
@@ -512,18 +519,11 @@ function setupSessionData() {
 function shareEvent() {
     const eventData = {
         title: 'WTD Kenya 2025 - Write The Docs Conference',
-        text: 'Join us at Write The Docs Kenya 2025 for an inspiring conference about documentation, technical writing, and community building. #WTDKenya2025',
+        text: 'Join us at Write The Docs Kenya 2025 for an inspiring conference about documentation, technical writing, and community building. #WTDKenya2025 @wtd_kenya',
         url: window.location.href
     };
     
-    if (navigator.share && navigator.canShare && navigator.canShare(eventData)) {
-        navigator.share(eventData).catch(err => {
-            console.log('Error sharing:', err);
-            fallbackShare(eventData);
-        });
-    } else {
-        fallbackShare(eventData);
-    }
+    showSocialShareModal(eventData);
 }
 
 function shareSession(platform) {
@@ -968,3 +968,89 @@ document.addEventListener('keydown', function(e) {
         document.body.insertBefore(skipLink, document.body.firstChild);
     }
 });
+
+// Social sharing functions
+function showSocialShareModal(data) {
+    const modal = document.createElement('div');
+    modal.className = 'social-share-modal';
+    modal.innerHTML = `
+        <div class="social-share-content">
+            <div class="social-share-header">
+                <h3>Share Event</h3>
+                <button class="social-share-close" onclick="closeSocialShareModal()">&times;</button>
+            </div>
+            <div class="social-share-body">
+                <div class="social-platforms">
+                    <button class="social-btn linkedin" onclick="shareToLinkedIn('${encodeURIComponent(data.text)}', '${encodeURIComponent(data.url)}')">
+                        <i class="fab fa-linkedin-in"></i>
+                        LinkedIn
+                    </button>
+                    <button class="social-btn twitter" onclick="shareToTwitter('${encodeURIComponent(data.text)}', '${encodeURIComponent(data.url)}')">
+                        <i class="fab fa-x-twitter"></i>
+                        X (Twitter)
+                    </button>
+                    <button class="social-btn whatsapp" onclick="shareToWhatsApp('${encodeURIComponent(data.text)}', '${encodeURIComponent(data.url)}')">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </button>
+                    <button class="social-btn instagram" onclick="copyForInstagram('${encodeURIComponent(data.text)}')">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    setTimeout(() => modal.classList.add('active'), 10);
+}
+
+function closeSocialShareModal() {
+    const modal = document.querySelector('.social-share-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        setTimeout(() => modal.remove(), 300);
+    }
+}
+
+function shareToLinkedIn(text, url) {
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}&summary=${text}`;
+    window.open(linkedInUrl, '_blank', 'width=600,height=400');
+    closeSocialShareModal();
+}
+
+function shareToTwitter(text, url) {
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+    window.open(twitterUrl, '_blank', 'width=600,height=400');
+    closeSocialShareModal();
+}
+
+function shareToWhatsApp(text, url) {
+    const whatsappUrl = `https://wa.me/?text=${text}%20${url}`;
+    window.open(whatsappUrl, '_blank');
+    closeSocialShareModal();
+}
+
+function copyForInstagram(text) {
+    const instagramText = decodeURIComponent(text) + '\n\nLink in bio! #WTDKenya2025 @wtd_kenya';
+    
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(instagramText).then(() => {
+            showNotification('Text copied for Instagram! Add the link in your bio.');
+        });
+    } else {
+        fallbackCopy(instagramText);
+    }
+    closeSocialShareModal();
+}
+
+function fallbackCopy(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    showNotification('Text copied to clipboard!');
+}

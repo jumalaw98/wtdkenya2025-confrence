@@ -1119,6 +1119,124 @@ a:hover {
     }
 }
 
+/* Social Share Modal */
+.social-share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(var(--shadow) / 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.social-share-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.social-share-content {
+    background-color: hsl(var(--surface));
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    max-width: 500px;
+    width: 90%;
+    box-shadow: var(--shadow-xl);
+    transform: scale(0.9);
+    transition: transform var(--transition-normal);
+}
+
+.social-share-modal.active .social-share-content {
+    transform: scale(1);
+}
+
+.social-share-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid hsl(var(--border));
+}
+
+.social-share-header h3 {
+    font-size: var(--font-size-xl);
+    color: hsl(var(--text-primary));
+    margin: 0;
+}
+
+.social-share-close {
+    background: none;
+    border: none;
+    font-size: var(--font-size-2xl);
+    cursor: pointer;
+    color: hsl(var(--text-muted));
+    transition: color var(--transition-fast);
+}
+
+.social-share-close:hover {
+    color: hsl(var(--text-primary));
+}
+
+.social-platforms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    color: white;
+}
+
+.social-btn.linkedin {
+    background-color: #0077B5;
+}
+
+.social-btn.linkedin:hover {
+    background-color: #005885;
+}
+
+.social-btn.twitter {
+    background-color: #000000;
+}
+
+.social-btn.twitter:hover {
+    background-color: #333333;
+}
+
+.social-btn.whatsapp {
+    background-color: #25D366;
+}
+
+.social-btn.whatsapp:hover {
+    background-color: #1DA851;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #833AB4, #FD1D1D, #F77737);
+}
+
+.social-btn.instagram:hover {
+    background: linear-gradient(45deg, #6A2C91, #CC1717, #C55A2C);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     :root {
