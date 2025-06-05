@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WTD Kenya 2025 - Write The Docs Conference</title>
+    <meta name="description" content="Join us at Write The Docs Kenya 2025 for an inspiring conference about documentation, technical writing, and community building. #WTDKenya2025">
+    <meta name="keywords" content="Write The Docs, WTD Kenya, documentation, technical writing, conference, Kenya, 2025">
+    <meta name="author" content="WTD Kenya">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="WTD Kenya 2025 - Write The Docs Conference">
+    <meta property="og:description" content="Join us at Write The Docs Kenya 2025 for an inspiring conference about documentation, technical writing, and community building.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wtdkenya2025.com">
+    <meta property="og:image" content="https://wtdkenya2025.com/assets/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@wtd_kenya">
+    <meta name="twitter:title" content="WTD Kenya 2025 - Write The Docs Conference">
+    <meta name="twitter:description" content="Join us at Write The Docs Kenya 2025 for an inspiring conference about documentation, technical writing, and community building.">
+    <meta name="twitter:image" content="https://wtdkenya2025.com/assets/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo-placeholder.svg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="assets/logo-placeholder.svg" alt="WTD Kenya 2025 Logo" class="logo">
+                    <span class="brand-text">WTD Kenya 2025</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#schedule" class="nav-link">Schedule</a>
+                    <a href="#speakers" class="nav-link">Speakers</a>
+                    <a href="#organizers" class="nav-link">Organizers</a>
+                    <a href="#partners" class="nav-link">Partners</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" role="main">
+        <div class="hero-background">
+            <img src="https://pixabay.com/get/gc2db2453379df9557523e39d213eb65a141cef91b78b5bfd23eebe5372beae8ddff806eb783563d3556631e71e63543f1e7aefd4c83753260f78ab9b5a536da9_1280.jpg" alt="Conference venue" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Write The Docs Kenya 2025</h1>
+                <p class="hero-subtitle">Where documentation meets community</p>
+                <p class="hero-description">Join us for an inspiring conference about documentation, technical writing, and building stronger communities through better communication.</p>
+                <div class="hero-details">
+                    <div class="hero-detail">
+                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        <span>March 15-16, 2025</span>
+                    </div>
+                    <div class="hero-detail">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="shareEvent()">
+                        <i class="fas fa-share-alt" aria-hidden="true"></i>
+                        Share Event
+                    </button>
+                    <a href="#schedule" class="btn btn-secondary">View Schedule</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section" role="search">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="text" id="searchInput" placeholder="Search sessions by title, speaker, or topic..." aria-label="Search sessions">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Sessions</button>
+                    <button class="filter-btn" data-filter="keynote">Keynotes</button>
+                    <button class="filter-btn" data-filter="workshop">Workshops</button>
+                    <button class="filter-btn" data-filter="networking">Networking</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <h2 class="section-title">Conference Schedule</h2>
+            <div class="schedule-grid" id="scheduleGrid">
+                <!-- Day 1 -->
+                <div class="day-header">
+                    <h3>Day 1 - March 15, 2025</h3>
+                </div>
+
+                <!-- Registration -->
+                <div class="session-card" data-type="registration" data-time="08:00" data-speaker="" data-topic="registration">
+                    <div class="session-time">08:00 - 09:00</div>
+                    <div class="session-content">
+                        <h4 class="session-title">Registration & Welcome Coffee</h4>
+                        <p class="session-description">Check-in, collect badges, and enjoy welcome refreshments while networking with fellow attendees.</p>
+                        <div class="session-meta">
+                            <div class="session-volunteer">
+                                <i class="fas fa-user-check" aria-hidden="true"></i>
+                                <span>Registration Team</span>
+                            </div>
+                            <div class="session-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Main Lobby</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opening Keynote -->
+                <div class="session-card keynote" data-type="keynote" data-time="09:00" data-speaker="Dr. Sarah Johnson" data-topic="documentation future">
+                    <div class="session-time">09:00 - 09:45</div>
+                    <div class="session-content">
+                        <h4 class="session-title">The Future of Documentation in Africa</h4>
+                        <p class="session-description">Exploring how documentation practices are evolving across African tech communities and the opportunities for innovation.</p>
+                        <div class="session-speaker">
+                            <img src="https://pixabay.com/get/gd74839d51f6a8dccf37f2a2d4df99851d29387095d371b6b5266c0bb232ba42fe04d1075fcfab5e6e3e9ba6b95fe2a74968c989e96789595a342c6e10e474eb1_1280.jpg" alt="Dr. Sarah Johnson" class="speaker-image">
+                            <div class="speaker-info">
+                                <span class="speaker-name">Dr. Sarah Johnson</span>
+                                <span class="speaker-title">Director of Technical Communication, TechAfrica</span>
+                            </div>
+                        </div>
+                        <div class="session-meta">
+                            <div class="session-volunteer">
+                                <i class="fas fa-user-check" aria-hidden="true"></i>
+                                <span>James Mwangi</span>
+                            </div>
+                            <button class="btn btn-small" onclick="addToCalendar('The Future of Documentation in Africa', '2025-03-15T09:00:00', '2025-03-15T09:45:00')">
+                                <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+                    <button class="session-details-btn" onclick="openSessionModal('keynote1')" aria-label="View session details">
+                        <i class="fas fa-info-circle" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <!-- Parallel Sessions -->
+                <div class="parallel-sessions">
+                    <div class="session-card workshop" data-type="workshop" data-time="10:00" data-speaker="Michael Chen" data-topic="api documentation">
+                        <div class="session-time">10:00 - 11:30</div>
+                        <div class="session-content">
+                            <h4 class="session-title">Building Better API Documentation</h4>
+                            <p class="session-description">Hands-on workshop covering best practices for creating comprehensive and user-friendly API documentation.</p>
+                            <div class="session-speaker">
+                                <img src="https://pixabay.com/get/g1df5eec8e8e17a89a92c4fd42c792dc7d7cb39d3acbd9a2ca2c9bb5e88ff4ac6ab56aeb571f2ab71f59aadc61c2dc4182aae1a3bda0a410bfd7c0c8de11f33e4_1280.jpg" alt="Michael Chen" class="speaker-image">
+                                <div class="speaker-info">
+                                    <span class="speaker-name">Michael Chen</span>
+                                    <span class="speaker-title">Senior Technical Writer, DevTools Inc</span>
+                                </div>
+                            </div>
+                            <div class="session-meta">
+                                <div class="session-volunteer">
+                                    <i class="fas fa-user-check" aria-hidden="true"></i>
+                                    <span>Lucy Wanjiku</span>
+                                </div>
+                                <button class="btn btn-small" onclick="addToCalendar('Building Better API Documentation', '2025-03-15T10:00:00', '2025-03-15T11:30:00')">
+                                    <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+                                    Add to Calendar
+                                </button>
+                            </div>
+                        </div>
+                        <button class="session-details-btn" onclick="openSessionModal('workshop1')" aria-label="View session details">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="session-card workshop" data-type="workshop" data-time="10:00" data-speaker="Amina Hassan" data-topic="localization accessibility">
+                        <div class="session-time">10:00 - 11:30</div>
+                        <div class="session-content">
+                            <h4 class="session-title">Documentation Localization & Accessibility</h4>
+                            <p class="session-description">Learn how to make your documentation accessible to diverse audiences through localization and inclusive design principles.</p>
+                            <div class="session-speaker">
+                                <img src="https://pixabay.com/get/g51abfa5fd4c145e3511d4c41cceb4a392cd53953859949fb4d5d099856a7a303c85994afdf9db22e35ebf8d1f91740b030c4285701cfb7f0d0fdd7884d372e96_1280.jpg" alt="Amina Hassan" class="speaker-image">
+                                <div class="speaker-info">
+                                    <span class="speaker-name">Amina Hassan</span>
+                                    <span class="speaker-title">UX Writer & Accessibility Advocate</span>
+                                </div>
+                            </div>
+                            <div class="session-meta">
+                                <div class="session-volunteer">
+                                    <i class="fas fa-user-check" aria-hidden="true"></i>
+                                    <span>David Otieno</span>
+                                </div>
+                                <button class="btn btn-small" onclick="addToCalendar('Documentation Localization & Accessibility', '2025-03-15T10:00:00', '2025-03-15T11:30:00')">
+                                    <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+                                    Add to Calendar
+                                </button>
+                            </div>
+                        </div>
+                        <button class="session-details-btn" onclick="openSessionModal('workshop2')" aria-label="View session details">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Coffee Break -->
+                <div class="session-card break" data-type="networking" data-time="11:30" data-speaker="" data-topic="networking coffee">
+                    <div class="session-time">11:30 - 12:00</div>
+                    <div class="session-content">
+                        <h4 class="session-title">Coffee Break & Networking</h4>
+                        <p class="session-description">Take a break, enjoy refreshments, and connect with fellow documentarians. Perfect opportunity for informal discussions and photo sessions.</p>
+                        <div class="break-image">
+                            <img src="https://pixabay.com/get/g35b68b60814e260ed3c726a1312c758cc644012aad27e2ecfddfa13a3293b7f34a490837972fec76a800064dd50ff2e0d6729ca54164d539c944d0fc083f56a1_1280.jpg" alt="Networking session" class="networking-image">
+                        </div>
+                        <div class="session-meta">
+                            <div class="session-volunteer">
+                                <i class="fas fa-user-check" aria-hidden="true"></i>
+                                <span>Events Team</span>
+                            </div>
+                            <div class="session-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Networking Lounge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 Header -->
+                <div class="day-header">
+                    <h3>Day 2 - March 16, 2025</h3>
+                </div>
+
+                <!-- Panel Discussion -->
+                <div class="session-card keynote" data-type="keynote" data-time="09:00" data-speaker="Panel Discussion" data-topic="community building open source">
+                    <div class="session-time">09:00 - 10:00</div>
+                    <div class="session-content">
+                        <h4 class="session-title">Building Documentation Communities in Open Source</h4>
+                        <p class="session-description">Panel discussion with maintainers and contributors on fostering inclusive documentation communities in open source projects.</p>
+                        <div class="panel-speakers">
+                            <img src="https://pixabay.com/get/g2700bc2c8e1adf572e89371d1d9119a0dacea548f92f5adc26776a2ec2edb9ff6d272229f8b2599d41c94b9548cbafaa8c0006d363ed8b6d3e2c2abc6ad80a18_1280.jpg" alt="Panel member 1" class="speaker-image">
+                            <img src="https://pixabay.com/get/g402b0732f979d228ec1cf11a7fe036522b313c4c35e9ff7cec4d2b9d152b6e280437e250172b7602ccfe33e9b8889b39a80555d9889a4f2e098155bf9f0c8fd8_1280.jpg" alt="Panel member 2" class="speaker-image">
+                            <img src="https://pixabay.com/get/g16eee89070c95b24a79b316e806b97c4c73222bdd02fb77994b7aeafb9d8b701a0d671bd8a53886b021ca5b4ddee772b4f2699fd1985902d3a64a42e83a6079e_1280.jpg" alt="Panel member 3" class="speaker-image">
+                        </div>
+                        <div class="session-meta">
+                            <div class="session-volunteer">
+                                <i class="fas fa-user-check" aria-hidden="true"></i>
+                                <span>Grace Nyong'o</span>
+                            </div>
+                            <button class="btn btn-small" onclick="addToCalendar('Building Documentation Communities in Open Source', '2025-03-16T09:00:00', '2025-03-16T10:00:00')">
+                                <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+                    <button class="session-details-btn" onclick="openSessionModal('panel1')" aria-label="View session details">
+                        <i class="fas fa-info-circle" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <!-- Closing Session -->
+                <div class="session-card keynote" data-type="keynote" data-time="16:00" data-speaker="Community" data-topic="closing community">
+                    <div class="session-time">16:00 - 17:00</div>
+                    <div class="session-content">
+                        <h4 class="session-title">Closing Ceremony & Community Commitment</h4>
+                        <p class="session-description">Wrap up the conference with reflections, community commitments, and plans for continuing the conversations started here.</p>
+                        <div class="session-meta">
+                            <div class="session-volunteer">
+                                <i class="fas fa-user-check" aria-hidden="true"></i>
+                                <span>Organizing Committee</span>
+                            </div>
+                            <button class="btn btn-small" onclick="addToCalendar('Closing Ceremony & Community Commitment', '2025-03-16T16:00:00', '2025-03-16T17:00:00')">
+                                <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+                    <button class="session-details-btn" onclick="openSessionModal('closing1')" aria-label="View session details">
+                        <i class="fas fa-info-circle" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="speakers-section">
+        <div class="container">
+            <h2 class="section-title">Featured Speakers</h2>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <img src="https://pixabay.com/get/gd74839d51f6a8dccf37f2a2d4df99851d29387095d371b6b5266c0bb232ba42fe04d1075fcfab5e6e3e9ba6b95fe2a74968c989e96789595a342c6e10e474eb1_1280.jpg" alt="Dr. Sarah Johnson" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Sarah Johnson</h3>
+                        <p class="speaker-title">Director of Technical Communication</p>
+                        <p class="speaker-company">TechAfrica</p>
+                        <div class="speaker-social">
+                            <a href="#" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <img src="https://pixabay.com/get/g1df5eec8e8e17a89a92c4fd42c792dc7d7cb39d3acbd9a2ca2c9bb5e88ff4ac6ab56aeb571f2ab71f59aadc61c2dc4182aae1a3bda0a410bfd7c0c8de11f33e4_1280.jpg" alt="Michael Chen" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Michael Chen</h3>
+                        <p class="speaker-title">Senior Technical Writer</p>
+                        <p class="speaker-company">DevTools Inc</p>
+                        <div class="speaker-social">
+                            <a href="#" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <img src="https://pixabay.com/get/g51abfa5fd4c145e3511d4c41cceb4a392cd53953859949fb4d5d099856a7a303c85994afdf9db22e35ebf8d1f91740b030c4285701cfb7f0d0fdd7884d372e96_1280.jpg" alt="Amina Hassan" class="speaker-photo">
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Amina Hassan</h3>
+                        <p class="speaker-title">UX Writer & Accessibility Advocate</p>
+                        <p class="speaker-company">Inclusive Design Co.</p>
+                        <div class="speaker-social">
+                            <a href="#" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers Section -->
+    <section id="organizers" class="organizers-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Organizers</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="organizersCarousel">
+                    <div class="organizer-slide">
+                        <img src="https://pixabay.com/get/g6a031cbcd62d33db233c929d3349f7fb1a092433ed3e171750927fddfbb37d0c7ca1a2f0fae0760ec7a61717e8c2a60de5392f259ed524a9a2b6f7a52f1be214_1280.jpg" alt="James Mwangi" class="organizer-photo">
+                        <div class="organizer-info">
+                            <h3 class="organizer-name">James Mwangi</h3>
+                            <p class="organizer-role">Lead Organizer</p>
+                            <div class="organizer-social">
+                                <a href="#" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                                <a href="#" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="organizer-slide">
+                        <img src="https://pixabay.com/get/g985f920afaa2cfe8b152ff4bf61ed665ff2cabd768c6319effade89cde7ec2a85d1c570eedc06e5182710278eed999a5f419da04203e4ad56721be9b6aac1a3a_1280.jpg" alt="Lucy Wanjiku" class="organizer-photo">
+                        <div class="organizer-info">
+                            <h3 class="organizer-name">Lucy Wanjiku</h3>
+                            <p class="organizer-role">Content Coordinator</p>
+                            <div class="organizer-social">
+                                <a href="#" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                                <a href="#" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="organizer-slide">
+                        <img src="https://pixabay.com/get/g0cdb5c63830f80eb26d5e2983e74efaabeda02e24bc93b150e5a4b8502e02e734539b633db1d449c1988c33e2433d34dd30877e03e711ed4e2801b8533edeb11_1280.jpg" alt="David Otieno" class="organizer-photo">
+                        <div class="organizer-info">
+                            <h3 class="organizer-name">David Otieno</h3>
+                            <p class="organizer-role">Technical Lead</p>
+                            <div class="organizer-social">
+                                <a href="#" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                                <a href="#" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="organizer-slide">
+                        <img src="https://pixabay.com/get/g3b09ec285fe7004389b53694611cd3255b95be6df997b33948603204030c1e8af516553638dee7a533aa12ea869ed1afefc97cdec6d8d4edacb0ed5629c8661c_1280.jpg" alt="Grace Nyong'o" class="organizer-photo">
+                        <div class="organizer-info">
+                            <h3 class="organizer-name">Grace Nyong'o</h3>
+                            <p class="organizer-role">Community Manager</p>
+                            <div class="organizer-social">
+                                <a href="#" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                                <a href="#" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="organizer-slide">
+                        <img src="https://pixabay.com/get/gededd3dd38727efea4e233dc92731983825d8b70a5204afbeb4580d62d6b158e2ab66cc71917a230437bcb1f205a07d3212abffe24c26cd16b198c3edc5744c2_1280.jpg" alt="Mary Kimani" class="organizer-photo">
+                        <div class="organizer-info">
+                            <h3 class="organizer-name">Mary Kimani</h3>
+                            <p class="organizer-role">Partnerships Lead</p>
+                            <div class="organizer-social">
+                                <a href="#" target="_blank" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                                <a href="#" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-btn-prev" onclick="slideCarousel(-1)" aria-label="Previous organizer">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" onclick="slideCarousel(1)" aria-label="Next organizer">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <h2 class="section-title">Our Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="assets/logo-placeholder.svg" alt="Partner 1" class="partner-image">
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logo-placeholder.svg" alt="Partner 2" class="partner-image">
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logo-placeholder.svg" alt="Partner 3" class="partner-image">
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logo-placeholder.svg" alt="Partner 4" class="partner-image">
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logo-placeholder.svg" alt="Partner 5" class="partner-image">
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logo-placeholder.svg" alt="Partner 6" class="partner-image">
+                </div>
+            </div>
+            <div class="partnership-cta">
+                <h3>Interested in Partnering?</h3>
+                <p>Join us in supporting the documentation community in Kenya and across Africa.</p>
+                <a href="mailto:partners@wtdkenya.com" class="btn btn-primary">Become a Partner</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="assets/logo-placeholder.svg" alt="WTD Kenya 2025 Logo" class="footer-logo">
+                        <h3>WTD Kenya 2025</h3>
+                    </div>
+                    <p>Building stronger documentation communities across Africa, one conversation at a time.</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/wtd_kenya" target="_blank" aria-label="Follow us on Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/wtd-kenya" target="_blank" aria-label="Connect on LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/wtd-kenya" target="_blank" aria-label="View our GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:hello@wtdkenya.com" target="_blank" aria-label="Send us an email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:hello@wtdkenya.com">hello@wtdkenya.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+254700123456">+254 700 123 456</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#organizers">Organizers</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="mailto:hello@wtdkenya.com">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Write The Docs Kenya. All rights reserved.</p>
+                <p class="hashtag">#WTDKenya2025 | Follow us @wtd_kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Session Modal -->
+    <div id="sessionModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Session Details</h2>
+                <button class="modal-close" onclick="closeSessionModal()" aria-label="Close modal">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <div class="modal-social">
+                    <span>Share this session:</span>
+                    <button onclick="shareSession('twitter')" class="social-btn" aria-label="Share on Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="shareSession('linkedin')" class="social-btn" aria-label="Share on LinkedIn">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="shareSession('facebook')" class="social-btn" aria-label="Share on Facebook">
+                        <i class="fab fa-facebook" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
