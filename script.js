@@ -2,6 +2,9 @@
 let currentSlide = 0;
 let sessionData = {};
 let filteredSessions = [];
+let autoAdvanceIntervalId = null; // For organizers carousel
+const ORGANIZERS_ITEMS_PER_VIEW = 3;
+const ORGANIZERS_AUTO_ADVANCE_DELAY = 7000; // Slower auto-advance, e.g., 7 seconds
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,7 +15,7 @@ function initializeApp() {
     setupNavigation();
     setupSearch();
     setupFilters();
-    setupCarousel();
+    setupCarousel(); // This will now handle its own auto-advance
     setupModals();
     setupSessionData();
     setupScrollEffects();
@@ -180,10 +183,33 @@ function setupCarousel() {
     if (!carousel) return;
     
     const slides = carousel.querySelectorAll('.organizer-slide');
-    if (slides.length === 0) return;
+    if (slides.length === 0) return; // No slides, nothing to do
+
+    const carouselContainer = carousel.parentElement; // Or specific selector if needed
+
+    // Stop auto-advance on hover
+    carouselContainer.addEventListener('mouseenter', () => {
+        if (autoAdvanceIntervalId) {
+            clearInterval(autoAdvanceIntervalId);
+            autoAdvanceIntervalId = null; // Clear the ID to indicate it's paused by hover
+        }
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+        // Restart auto-advance only if it was paused by hover and there are enough slides
+        if (!autoAdvanceIntervalId && slides.length > ORGANIZERS_ITEMS_PER_VIEW) {
+            autoAdvanceIntervalId = setInterval(autoAdvanceCarousel, ORGANIZERS_AUTO_ADVANCE_DELAY);
+        }
+    });
     
-    // Initialize carousel
+    // Initialize carousel display
     updateCarousel();
+    
+    // Start auto-advance if enough slides
+    if (slides.length > ORGANIZERS_ITEMS_PER_VIEW) {
+        if (autoAdvanceIntervalId) clearInterval(autoAdvanceIntervalId); // Clear any existing
+        autoAdvanceIntervalId = setInterval(autoAdvanceCarousel, ORGANIZERS_AUTO_ADVANCE_DELAY);
+    }
     
     // Touch/swipe support
     let startX = 0;
@@ -215,37 +241,46 @@ function setupCarousel() {
 function slideCarousel(direction) {
     const carousel = document.getElementById('organizersCarousel');
     const slides = carousel.querySelectorAll('.organizer-slide');
+
+    // If not enough slides to scroll (e.g., 3 slides, 3 per view), do nothing.
+    if (!carousel || slides.length <= ORGANIZERS_ITEMS_PER_VIEW) return; 
     
     currentSlide += direction;
-    
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    } else if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
+    const maxSlideIndex = slides.length - ORGANIZERS_ITEMS_PER_VIEW;
+
+    if (direction === 1) { // Moving next
+        if (currentSlide > maxSlideIndex) {
+            currentSlide = 0; // Loop to start
+        }
+    } else { // Moving previous
+        if (currentSlide < 0) {
+            currentSlide = maxSlideIndex; // Loop to end
+        }
     }
-    
     updateCarousel();
 }
 
 function updateCarousel() {
     const carousel = document.getElementById('organizersCarousel');
+    if (!carousel) return; // Guard clause
     const slides = carousel.querySelectorAll('.organizer-slide');
-    const slideWidth = 50; // Show 2 cards at a time
-    const maxSlide = Math.max(0, slides.length - 2);
+    if (slides.length === 0) return; // Guard clause
+
+    const slideWidthPercentage = 100 / ORGANIZERS_ITEMS_PER_VIEW;
     
-    // Ensure currentSlide doesn't exceed bounds
-    if (currentSlide > maxSlide) {
-        currentSlide = 0;
-    }
-    
-    const translateX = -currentSlide * slideWidth;
-    carousel.style.transform = `translateX(${translateX}%)`;
+    // Ensure currentSlide is within valid range before transform
+    // This logic is mostly handled by slideCarousel, but a safeguard here is fine.
+    const maxSlideIndex = Math.max(0, slides.length - ORGANIZERS_ITEMS_PER_VIEW);
+    currentSlide = Math.max(0, Math.min(currentSlide, maxSlideIndex));
+
+    const translateXValue = -currentSlide * slideWidthPercentage;
+    carousel.style.transform = `translateX(${translateXValue}%)`;
 }
 
 function autoAdvanceCarousel() {
     const carousel = document.getElementById('organizersCarousel');
-    if (carousel && !document.hidden) {
-        slideCarousel(1);
+    if (carousel && !document.hidden) { // Check if tab is active
+        slideCarousel(1); // Advance by 1 slide position
     }
 }
 

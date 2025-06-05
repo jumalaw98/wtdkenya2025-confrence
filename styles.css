@@ -723,6 +723,8 @@ a:hover {
 .carousel-container {
     position: relative;
     max-width: 800px;
+    /* Consider increasing max-width if 3 cards feel too cramped, e.g., max-width: 1000px; or 1100px */
+    /* max-width: 1000px; */
     margin: 0 auto;
     overflow: hidden;
     border-radius: var(--border-radius-lg);
@@ -730,23 +732,34 @@ a:hover {
 
 .carousel {
     display: flex;
-    transition: transform var(--transition-slow);
+    transition: transform 0.75s ease; /* Slower transition */
+    gap: var(--spacing-lg); /* Add gap between slides, adjust as needed */
 }
 
 .organizer-slide {
-    min-width: 50%;
+    /* Calculate basis for 3 items with the specified gap */
+    flex-basis: calc((100% - (var(--spacing-lg) * 2)) / 3); /* (total_width - total_gap_space) / num_items */
+    flex-shrink: 0;
+
     background-color: hsl(var(--surface));
     padding: var(--spacing-2xl);
     text-align: center;
     box-shadow: var(--shadow-lg);
-    margin: 0 var(--spacing-md);
+    /* margin: 0 var(--spacing-md); Removed, using gap on .carousel now */
     border-radius: var(--border-radius-lg);
-    flex-shrink: 0;
+
+    /* Ensure same height and content alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    min-height: 480px; /* Adjust based on your content to ensure consistent card height */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+    position: relative; /* For z-index on hover */
 }
 
 .organizer-photo {
-    width: 200px;
-    height: 200px;
+    width: 180px; /* Slightly smaller if cards are narrower */
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto var(--spacing-xl);
@@ -754,14 +767,14 @@ a:hover {
 }
 
 .organizer-name {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl); /* Adjust if space is tight */
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
     color: hsl(var(--text-primary));
 }
 
 .organizer-role {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base); /* Adjust if space is tight */
     color: hsl(var(--text-secondary));
     margin-bottom: var(--spacing-xl);
 }
@@ -773,8 +786,8 @@ a:hover {
 }
 
 .organizer-social a {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: hsl(var(--primary) / 0.1);
     display: flex;
@@ -788,6 +801,12 @@ a:hover {
     background-color: hsl(var(--primary));
     color: white;
     transform: scale(1.1);
+}
+
+.organizer-slide:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    z-index: 10; /* Ensure hovered card is on top */
 }
 
 .carousel-btn {
