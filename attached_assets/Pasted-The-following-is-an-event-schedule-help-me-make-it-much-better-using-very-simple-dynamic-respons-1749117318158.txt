@@ -1,0 +1,34 @@
+The following is an event schedule, help me make it much better, using very simple, dynamic, responsive, animated website for our event schedule. Utilize colors from the logos attached. Dont use framworkds, just pure HTML, CSS, and JavaScript. The website should be mobile-friendly and easy to navigate.
+
+Its only one-day event, we do have breakout session more than one session happening at same time, (include more than one card for that time). Add image placeholder for speakers. Add share to social media button (x: Twitter, LinkedIn, Instagram) this should have custom template of text: Our hashtag: #WTDKenya2025 our handle: @wtd_kenya. Follow icons, update to latest cons brands and include (x, LinkedIn, WhatsApp) all opening to new tab. There's a section of break/photo session/networking, please add them. ON every card also add a volunteer/person in charge. Before footer add section of partners logos. Also add carousel of organizers (name, image, social:x, LinkedIn)
+
+Note: The design should be clean, modern, and visually appealing, with a focus on usability and accessibility.
+- No frameworks, just pure HTML, CSS, and JavaScript.
+- Use colors from the logos attached.
+- Make it mobile-friendly and easy to navigate.
+- Include a share to social media button with custom template text.
+- Add image placeholders for speakers.
+- Include a section for partners' logos.
+- Add a carousel for organizers with their names, images, and social links.
+- Ensure the design is clean, modern, and visually appealing.
+- No database or server-side code, just static files.links to external resources for icons and images.
+- add a section for break/photo session/networking.
+- Include a volunteer/person in charge on every session card.
+- Ensure the design is responsive and animated.
+- Use simple animations for transitions and interactions.
+- for the carousel, use JavaScript to handle the sliding effect.
+- for two session happening at the same time, use a grid layout to display them side by side.
+- Ensure all links open in a new tab.
+- search for the latest icons for social media and use them.
+- include a footer with contact information and links to social media.
+- include search functionality to filter sessions by time or topic or speaker.
+- Ensure the website is accessible with proper ARIA roles and labels.
+- Ensure the website is optimized for performance with minimal loading times.
+- ensure it is SEO-friendly with proper meta tags and descriptions.
+- our hashtag: #WTDKenya2025 our handle: @wtd_kenya.
+- for each session card, include the time, title, description, speaker image placeholder, volunteer/person in charge, and a button to add to calendar.
+- ensure the design is consistent with the event branding.
+- on popup modal for every session card, include more details about the session, speaker bio, and a button to close the modal, and share to social media icons, with the following template: Our hashtag: #WTDKenya2025 our handle: @wtd_kenya. {sessoion title} at {speaker name}.
+
+
+
