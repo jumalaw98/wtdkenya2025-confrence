@@ -636,6 +636,53 @@ a:hover {
     margin: 0 auto;
 }
 
+/* Specific styling for the lunch break card */
+.session-card-lunch-break {
+    background-image: url('https://pbs.twimg.com/media/GstFyrzWEAADKMs?format=jpg&name=large');
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Needed for the overlay */
+    color: white; /* Change text color to white for better contrast */
+}
+
+.session-card-lunch-break::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    border-radius: var(--border-radius-lg); /* Match card's border radius */
+    z-index: 1; /* Place overlay above background but below content */
+}
+
+.session-card-lunch-break .session-content {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2;
+}
+
+.session-card-lunch-break .session-time,
+.session-card-lunch-break .session-title,
+.session-card-lunch-break .session-description,
+.session-card-lunch-break .session-meta span,
+.session-card-lunch-break .session-meta i {
+    color: white; /* Ensure all text within the card is white */
+}
+
+.session-card-lunch-break .session-time {
+    background-color: hsl(var(--primary) / 0.7); /* Adjust background for time */
+}
+
+.session-card-lunch-break .btn-small {
+    background-color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary-dark));
+}
+
+.session-card-lunch-break .btn-small:hover {
+    background-color: hsl(var(--primary-dark));
+}
+
 /* Speakers Section */
 .speakers-section {
     padding: var(--spacing-3xl) 0;
